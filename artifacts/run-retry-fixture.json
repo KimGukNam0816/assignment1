@@ -1,0 +1,172 @@
+[
+  {
+    "scenario": "timeout_429_success",
+    "mode": "fixture",
+    "response": {
+      "id": "fixture-response",
+      "request_id": "fixture-request",
+      "model": "fixture-not-a-model",
+      "status": "completed",
+      "output_text": "{\"answer\": \"Python 3.12 환경을 사용하세요.\", \"source_ids\": [\"policy-python\"], \"needs_human\": false, \"category\": \"installation\"}",
+      "output": [
+        {
+          "type": "message",
+          "role": "assistant",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "{\"answer\": \"Python 3.12 환경을 사용하세요.\", \"source_ids\": [\"policy-python\"], \"needs_human\": false, \"category\": \"installation\"}",
+              "annotations": []
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "input_tokens": 1500,
+        "output_tokens": 70,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      }
+    },
+    "events": [
+      {
+        "event": "api_attempt",
+        "attempt": 1,
+        "response": null,
+        "latency_ms": 0.010899966582655907,
+        "error_kind": "timeout",
+        "status_code": null,
+        "request_id": null,
+        "retryable": true,
+        "wait_s": 0.1606075175220969
+      },
+      {
+        "event": "api_attempt",
+        "attempt": 2,
+        "response": null,
+        "latency_ms": 0.005499925464391708,
+        "error_kind": "http",
+        "status_code": 429,
+        "request_id": null,
+        "retryable": true,
+        "wait_s": 0.6542418008964951
+      },
+      {
+        "event": "api_attempt",
+        "attempt": 3,
+        "response": {
+          "id": "fixture-response",
+          "request_id": "fixture-request",
+          "model": "fixture-not-a-model",
+          "status": "completed",
+          "output_text": "{\"answer\": \"Python 3.12 환경을 사용하세요.\", \"source_ids\": [\"policy-python\"], \"needs_human\": false, \"category\": \"installation\"}",
+          "output": [
+            {
+              "type": "message",
+              "role": "assistant",
+              "content": [
+                {
+                  "type": "output_text",
+                  "text": "{\"answer\": \"Python 3.12 환경을 사용하세요.\", \"source_ids\": [\"policy-python\"], \"needs_human\": false, \"category\": \"installation\"}",
+                  "annotations": []
+                }
+              ]
+            }
+          ],
+          "usage": {
+            "input_tokens": 1500,
+            "output_tokens": 70,
+            "input_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          }
+        },
+        "latency_ms": 0.012800097465515137,
+        "error_kind": null,
+        "status_code": null,
+        "request_id": "fixture-request",
+        "retryable": false,
+        "wait_s": 0
+      }
+    ],
+    "attempts": 3,
+    "waits": [
+      0.1606075175220969,
+      0.6542418008964951
+    ]
+  },
+  {
+    "scenario": "authentication_401",
+    "mode": "fixture",
+    "response": null,
+    "events": [
+      {
+        "event": "api_attempt",
+        "attempt": 1,
+        "response": null,
+        "latency_ms": 0.0021997839212417603,
+        "error_kind": "http",
+        "status_code": 401,
+        "request_id": null,
+        "retryable": false,
+        "wait_s": 0
+      }
+    ],
+    "attempts": 1,
+    "waits": []
+  },
+  {
+    "scenario": "server_exhausted",
+    "mode": "fixture",
+    "response": null,
+    "events": [
+      {
+        "event": "api_attempt",
+        "attempt": 1,
+        "response": null,
+        "latency_ms": 0.003600027412176132,
+        "error_kind": "http",
+        "status_code": 503,
+        "request_id": null,
+        "retryable": true,
+        "wait_s": 0.12753236794316833
+      },
+      {
+        "event": "api_attempt",
+        "attempt": 2,
+        "response": null,
+        "latency_ms": 0.00190013088285923,
+        "error_kind": "http",
+        "status_code": 503,
+        "request_id": null,
+        "retryable": true,
+        "wait_s": 0.169073697538289
+      },
+      {
+        "event": "api_attempt",
+        "attempt": 3,
+        "response": null,
+        "latency_ms": 0.001200009137392044,
+        "error_kind": "http",
+        "status_code": 503,
+        "request_id": null,
+        "retryable": true,
+        "wait_s": 0
+      }
+    ],
+    "attempts": 3,
+    "waits": [
+      0.12753236794316833,
+      0.169073697538289
+    ]
+  }
+]
